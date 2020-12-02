@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4591082761995022033
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bf6cb356a943b143a6c7f202a45358e, type: 3}
+  m_Name: CursorPositionOnBoardReadonly
+  m_EditorClassIdentifier: 
+  m_variable: {fileID: 11400000}
+--- !u!114 &-4349062925266466694
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f118d5ad67c694493f98fe5d36b260, type: 3}
+  m_Name: OnCursorPositionOnBoardChanged
+  m_EditorClassIdentifier: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f81c6e5888012147bad0f503673234d, type: 3}
+  m_Name: CursorPositionOnBoard
+  m_EditorClassIdentifier: 
+  m_value: {x: 0, y: 0}
+  m_onValueChanged: {fileID: -4349062925266466694}

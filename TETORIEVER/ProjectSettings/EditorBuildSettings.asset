@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Assets/SampleGames/2DShooting/2DShooting.unity
     guid: 2334eb2ce5f0ace47b9236105ef88636
+  - enabled: 1
+    path: Assets/_Assets/TETORIEVER/Scenes/Main.unity
+    guid: 65761fa3c7f5eb347a88780a75b7eb0c
+  - enabled: 1
+    path: Assets/_Assets/TETORIEVER/Scenes/__End.unity
+    guid: 5c5a40609ed3482409a203e7b3ee9a74
   m_configObjects: {}

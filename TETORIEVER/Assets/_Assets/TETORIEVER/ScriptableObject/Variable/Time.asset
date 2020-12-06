@@ -37,7 +37,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10649c666b5afe542b8c559979adf07e, type: 3}
   m_Name: Time
   m_EditorClassIdentifier: 
-  m_value: 0
+  m_value: 3.6709979
   m_onValueChanged: {fileID: -8377411208532226557}
 --- !u!114 &3669912715593987685
 MonoBehaviour:

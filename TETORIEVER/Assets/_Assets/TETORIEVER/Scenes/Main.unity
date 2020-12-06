@@ -121,6 +121,159 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &615862169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 615862171}
+  - component: {fileID: 615862170}
+  m_Layer: 0
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &615862170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615862169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614a6407747dd104a9aab79244b5f3d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_enable:
+    m_value: 0
+    m_variable: {fileID: -4420336010599939567, guid: 1ea4f58769541944793e612d04bfdbb3,
+      type: 2}
+  m_time: {fileID: 11400000, guid: 76742e6cd9183bb499943df21d566547, type: 2}
+  m_initialTime:
+    m_value: 5
+    m_variable: {fileID: 0}
+  m_timeScale:
+    m_value: -1
+    m_variable: {fileID: 0}
+  m_min:
+    m_value: 0
+    m_variable: {fileID: 0}
+  m_max:
+    m_value: 500
+    m_variable: {fileID: 0}
+  m_repeating:
+    m_value: 0
+    m_variable: {fileID: 0}
+  m_onMinValue:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onMaxValue:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &615862171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615862169}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1092438490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1092438492}
+  - component: {fileID: 1092438491}
+  - component: {fileID: 1092438493}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &1092438491
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092438490}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 67440b798df616744bae6f6f3ff314e1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!4 &1092438492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092438490}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1092438493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092438490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49ad05edae3ce4047be24278e3d02932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_setOnStart: 1
+  m_setOnUpdate: 1
+  m_intValues: []
+  m_floatValues:
+  - m_name: Time
+    m_property:
+      m_value: 0
+      m_variable: {fileID: -6927607845742594020, guid: 76742e6cd9183bb499943df21d566547,
+        type: 2}
+  m_boolValues:
+  - m_name: IsPlaying
+    m_property:
+      m_value: 0
+      m_variable: {fileID: -4420336010599939567, guid: 1ea4f58769541944793e612d04bfdbb3,
+        type: 2}
+  - m_name: IsFading
+    m_property:
+      m_value: 0
+      m_variable: {fileID: -4710613453296994100, guid: 25086688504573a40a7c0e85a442575d,
+        type: 2}
+  m_triggers: []
 --- !u!1 &1608324539
 GameObject:
   m_ObjectHideFlags: 0

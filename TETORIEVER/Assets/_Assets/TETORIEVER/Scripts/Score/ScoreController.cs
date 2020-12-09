@@ -26,17 +26,31 @@ namespace TETORIEVER.Score
         [Header("設定")]
         [SerializeField] bool m_UpdateHighScoreOnPlaying=false;//プレイ中にハイスコアの更新を行うかどうか
 
+        List<IDisposable> m_disposelist = new List<IDisposable>();
+
         private void Start()
         {
+        }
+
+        private void OnEnable()
+        {
+            m_disposelist = new List<IDisposable>();
+
             m_ScoreCalculator = m_ScoreCalculateObject.GetComponent<IScoreCalculator>();
-            m_OnCellDeletedListener.Subscribe((num) =>
+            m_disposelist.Add( m_OnCellDeletedListener.Subscribe((num) =>
             {
                 UpdateScore(num);
                 if (m_UpdateHighScoreOnPlaying) UpdateHighScore();
-            });
+            }));
 
-            m_PlayStartInitializeListener.Subscribe(PlayStartInitialize);
-            if(!m_UpdateHighScoreOnPlaying)m_UpdateHighScoreListener.Subscribe(UpdateHighScore);
+            m_disposelist.Add( m_PlayStartInitializeListener.Subscribe(PlayStartInitialize));
+            if (!m_UpdateHighScoreOnPlaying)m_disposelist.Add( m_UpdateHighScoreListener.Subscribe(UpdateHighScore));
+        }
+
+        private void OnDisable()
+        {
+            m_disposelist.ForEach(x => x.Dispose());
+            m_disposelist = new List<IDisposable>();
         }
         //プレイ開始時の初期化
         void PlayStartInitialize()

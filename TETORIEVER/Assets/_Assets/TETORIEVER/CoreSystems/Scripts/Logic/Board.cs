@@ -22,22 +22,13 @@ namespace TETORIEVER
             new Vector2Int(-1, -1),
         };
 
-        private Cell this[Vector2Int pos]
-        {
-            get => m_cells[pos.x, pos.y];
-            set
-            {
-                m_cells[pos.x, pos.y] = value;
-            }
-        }
-
         public Board(Vector2Int size)
         {
             // 最初は何もない盤面.
             m_cells = new Cell[size.x, size.y];
-            for(int x = 0; x < size.x; x++)
+            for (int x = 0; x < size.x; x++)
             {
-                for(int y = 0; y < size.y; y++)
+                for (int y = 0; y < size.y; y++)
                 {
                     m_cells[x, y] = new Cell(new Vector2Int(x, y), Cell.CellType.None);
                 }
@@ -49,24 +40,24 @@ namespace TETORIEVER
             return puts.All(cell => IsEmpty(cell.m_position));
         }
 
-        public void Place(IEnumerable<Cell> puts, out int vanishCount)
+        public void Place(IEnumerable<Cell> puts, out List<Vector2Int> removePositions)
         {
             // 置く処理.
-            foreach(var cell in puts)
+            foreach (var cell in puts)
             {
-                this[cell.m_position] = cell;
+                m_cells[cell.m_position.x, cell.m_position.y] = cell;
             }
 
             // 消すものを検索する処理.
             List<Cell> removes = new List<Cell>();
-            foreach(var put in puts.Where(x => x.m_cellType == Cell.CellType.Vanish))
+            foreach (var put in puts.Where(x => x.m_cellType == Cell.CellType.Vanish))
             {
-                foreach(var dir in Directions)
+                foreach (var dir in Directions)
                 {
                     Stack<Cell> lines = new Stack<Cell>();
                     lines.Push(put);
 
-                    while(GetCellType(lines.Peek().m_position + dir, out Cell cell) == Cell.CellType.Normal)
+                    while (GetCellType(lines.Peek().m_position + dir, out Cell cell) == Cell.CellType.Normal)
                     {
                         lines.Push(cell);
                     }
@@ -80,26 +71,33 @@ namespace TETORIEVER
             }
 
             // 消す処理.
-            vanishCount = 0;
-            foreach(var remove in removes.Distinct())
+            removePositions = new List<Vector2Int>();
+            foreach (var remove in removes.Distinct())
             {
-                vanishCount++;
-                remove.m_cellType = Cell.CellType.None;
+                removePositions.Add(remove.m_position);
+                m_cells[remove.m_position.x, remove.m_position.y].m_cellType = Cell.CellType.None;
             }
         }
 
         private bool IsEmpty(Vector2Int pos)
         {
+            if (!IsInRange(pos)) return false;
             return m_cells[pos.x, pos.y].IsEmpty;
         }
 
         private Cell.CellType GetCellType(Vector2Int pos, out Cell cell)
         {
-            cell = null;
-            if (pos.x < 0 || pos.x >= m_cells.GetLength(0)) return Cell.CellType.Wall;
-            if (pos.y < 0 || pos.y >= m_cells.GetLength(1)) return Cell.CellType.Wall;
+            cell = default;
+            if (!IsInRange(pos)) return Cell.CellType.Wall;
             cell = m_cells[pos.x, pos.y];
             return cell.m_cellType;
+        }
+
+        private bool IsInRange(Vector2Int pos)
+        {
+            if (pos.x < 0 || pos.x >= m_cells.GetLength(0)) return false;
+            if (pos.y < 0 || pos.y >= m_cells.GetLength(1)) return false;
+            return true;
         }
     }
 }

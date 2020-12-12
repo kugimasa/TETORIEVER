@@ -2,7 +2,7 @@
 
 namespace TETORIEVER
 {
-    public class Cell
+    public struct Cell
     {
         public enum CellType
         {
@@ -12,8 +12,8 @@ namespace TETORIEVER
             Vanish,
         }
 
-        public Vector2Int m_position = default;
-        public CellType m_cellType = default;
+        public Vector2Int m_position;
+        public CellType m_cellType;
 
         public Cell(Vector2Int position, CellType cellType)
         {

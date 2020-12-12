@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TETORIEVER
 {
-    public class CursorBoardPosition : MonoBehaviour
+    public class CursorBoardPosition : MonoBehaviour, IPositionConverter
     {
         private const float MaxDistance = 100f;
 
@@ -18,11 +18,12 @@ namespace TETORIEVER
         private Camera m_camera = default;
         private Grid[] m_grids = default;
 
-        private void Start()
+        private void Awake()
         {
             m_camera = Camera.main;
             // 処理的に重いかもだけど、独立して動くようにするためにやむなく.
             m_grids = FindObjectsOfType<Grid>();
+            Services.PositionConverter = this;
         }
 
         private void Update()
@@ -60,6 +61,16 @@ namespace TETORIEVER
             // Debug用.
             if (m_followObject == null) return;
             m_followObject.transform.position = m_boardWorldPosition;
+        }
+
+        public Vector3? BoardToWorldPosition(Vector2Int position)
+        {
+            foreach(var grid in m_grids)
+            {
+                if (grid.m_position != position) continue;
+                return grid.transform.position;
+            }
+            return null;
         }
     }
 }

@@ -44,16 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dc032f7e8cb57641a0c22381a68ef5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ScoreCalculateObject: {fileID: 4708896437398842924}
-  m_OnCellDeletedListener: {fileID: -407597343953229133, guid: 0226341205dd2ca4492d23ae05b6b2c3,
+  m_scoreCalculateObject: {fileID: 4708896437398842924}
+  m_onCellDeletedListener: {fileID: -407597343953229133, guid: 0226341205dd2ca4492d23ae05b6b2c3,
     type: 2}
-  m_Score: {fileID: 11400000, guid: 4fe786fa6c37dbf4ebc74cffbfcda145, type: 2}
+  m_score: {fileID: 11400000, guid: 4fe786fa6c37dbf4ebc74cffbfcda145, type: 2}
   m_highScore: {fileID: 11400000, guid: cebb60ea196a900488228c124bad934b, type: 2}
-  m_PlayStartInitializeListener: {fileID: -1865642866237785157, guid: 55b58a6b64e5c6b48ab0dd8bd15a8f42,
+  m_onPlayStartedListener: {fileID: -1865642866237785157, guid: 55b58a6b64e5c6b48ab0dd8bd15a8f42,
     type: 2}
-  m_UpdateHighScoreListener: {fileID: -1865642866237785157, guid: 87dece75ba90931478922eb922399aab,
-    type: 2}
-  m_UpdateHighScoreOnPlaying: 0
 --- !u!114 &4708896437398842896
 MonoBehaviour:
   m_ObjectHideFlags: 0

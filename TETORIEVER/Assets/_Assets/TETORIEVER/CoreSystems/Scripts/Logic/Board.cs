@@ -62,7 +62,7 @@ namespace TETORIEVER
                         lines.Push(cell);
                     }
 
-                    if (GetCellType(lines.Peek().m_position + dir, out Cell last) == Cell.CellType.Vanish)
+                    if (lines.Count > 1 && GetCellType(lines.Peek().m_position + dir, out Cell last) == Cell.CellType.Vanish)
                     {
                         lines.Push(last);
                         removes.AddRange(lines);

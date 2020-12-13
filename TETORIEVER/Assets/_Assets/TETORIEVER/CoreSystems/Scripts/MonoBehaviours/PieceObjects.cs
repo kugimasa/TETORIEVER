@@ -8,6 +8,7 @@ namespace TETORIEVER
     {
         [SerializeField] private int m_handIndex = 0;
         [SerializeField] private Vector2Int m_boardCenter = new Vector2Int(3, 3);
+        [SerializeField] private Vector3 m_cellOffset = Vector3.up;
 
         [Header("Prefabs")]
         [SerializeField] private CellObject m_cellPrefab = default;
@@ -96,7 +97,7 @@ namespace TETORIEVER
                     m_cellObjects.Add(obj);
                 }
                 obj.SetCellType(cell.m_cellType, m_isSelected);
-                obj.transform.localPosition = pos - m_centerPosition;
+                obj.transform.localPosition = pos - m_centerPosition + m_cellOffset;
 
                 index++;
             }

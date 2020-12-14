@@ -11,16 +11,28 @@ namespace TETORIEVER
 
     public class RandomPieceGetter :MonoBehaviour, IPieceGetter
     {
-        [SerializeField] private GameEventStringListener m_chengePiece;
-        [SerializeField] private GameEventListener m_putPiece;
+        [SerializeField] private GameEventStringListener m_chengePieceEventListener;
+        [SerializeField] private GameEventListener m_putPieceEventListener;
 
-        int m_nowSelectIndex = 0;
 
-        Cell[][] m_holdCells = new Cell[4][];
+        private Cell[][] m_cellDatas = null;
+        private Cell[][] m_holdCells = new Cell[4][];
+        private int m_nowSelectIndex = 0;
 
-        Cell[][] m_cellDatas=null;
+        //ピースのデータを供給するもの
+        private IPieceSource m_pieceSource = new SimplePieceSource();
 
-        IPieceSource pieceSource = new SimplePieceSource();
+
+        private void Awake()
+        {
+            Services.PieceGetter = this;
+
+            m_chengePieceEventListener.Subscribe(ChengeIndex).DisposeOnSceneUnLoaded();
+            m_putPieceEventListener.Subscribe(PutEvent).DisposeOnSceneUnLoaded();
+            if (TryGetComponent<IPieceSource>(out var ip)) m_pieceSource = ip;
+            m_cellDatas = m_pieceSource.PieceDatas;
+        }
+
 
         public IEnumerable<Cell> GetPiece(int index)
         {
@@ -38,19 +50,9 @@ namespace TETORIEVER
             }
         }
 
-        private void Awake()
+        void ChengeIndex(string input)
         {
-            Services.PieceGetter = this;
-            m_chengePiece.Subscribe(ChengeIndex).DisposeOnSceneUnLoaded();
-            m_putPiece.Subscribe(PutEvent).DisposeOnSceneUnLoaded();
-
-            if (TryGetComponent<IPieceSource>(out var ip)) pieceSource = ip;
-            m_cellDatas = pieceSource.PieceDatas;
-        }
-
-        void ChengeIndex(string i)
-        {
-            switch (i)
+            switch (input)
             {
                 case InputConstants.Hand1:m_nowSelectIndex = 0;break;
                 case InputConstants.Hand2:m_nowSelectIndex = 1; break;

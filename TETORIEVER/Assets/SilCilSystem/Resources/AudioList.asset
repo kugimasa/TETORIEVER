@@ -12,8 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc9e308e1e9d204aa941d96ad1c34f4, type: 3}
   m_Name: AudioList
   m_EditorClassIdentifier: 
-  audioInfos:
-  - name: RollBall_GameClear
-    clip: {fileID: 8300000, guid: 6c6a543bb1426224b895ac19fca37c03, type: 3}
-  - name: RollBall_GameOver
-    clip: {fileID: 8300000, guid: 7b95be5bb44aa984eac39d6309c63c0d, type: 3}
+  audioInfos: []

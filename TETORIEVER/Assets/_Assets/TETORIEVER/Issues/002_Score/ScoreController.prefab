@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4708896437398842924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4708896437398842926}
+  - component: {fileID: 4708896437398842927}
+  - component: {fileID: 4708896437398842896}
+  m_Layer: 0
+  m_Name: ScoreController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4708896437398842926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4708896437398842924}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4708896437398842927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4708896437398842924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc032f7e8cb57641a0c22381a68ef5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_scoreCalculateObject: {fileID: 4708896437398842924}
+  m_onCellDeletedListener: {fileID: -407597343953229133, guid: 0226341205dd2ca4492d23ae05b6b2c3,
+    type: 2}
+  m_score: {fileID: 11400000, guid: 4fe786fa6c37dbf4ebc74cffbfcda145, type: 2}
+  m_highScore: {fileID: 11400000, guid: cebb60ea196a900488228c124bad934b, type: 2}
+  m_onPlayStartedListener: {fileID: -1865642866237785157, guid: 55b58a6b64e5c6b48ab0dd8bd15a8f42,
+    type: 2}
+--- !u!114 &4708896437398842896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4708896437398842924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 421c9151da96df84d9a360b5a61faacd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_scoreRate: 500

@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1131048038119905570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7640018974190018163}
+  - component: {fileID: 6064429645410004495}
+  - component: {fileID: -3784160617127712723}
+  m_Layer: 0
+  m_Name: PlayerInput
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7640018974190018163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131048038119905570}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6064429645410004495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131048038119905570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e9165afe9adc6b4098c5aef82025049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_enabled: {fileID: -4420336010599939567, guid: 1ea4f58769541944793e612d04bfdbb3,
+    type: 2}
+  m_onInputRecieved: {fileID: 11400000, guid: 6876caa450a8c504cae61e7fe8524b00, type: 2}
+--- !u!114 &-3784160617127712723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131048038119905570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc3eef1b75d94ca44a967f328bccd3f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_isPlaying: {fileID: -4420336010599939567, guid: 1ea4f58769541944793e612d04bfdbb3,
+    type: 2}
+  m_cursorPosition: {fileID: -4591082761995022033, guid: 515411ec98783f14586cd37d2e7f21c3,
+    type: 2}
+  m_onInputRecieved: {fileID: 8090278937472405362, guid: 6876caa450a8c504cae61e7fe8524b00,
+    type: 2}
+  m_onPieceChanged: {fileID: 11400000, guid: 308635488f1b7274a92bd2e051bcad4b, type: 2}
+  m_onPiecePlaced: {fileID: 11400000, guid: e3ba0a9252e15a6498fe1824e459f040, type: 2}
+  m_onPieceRotated: {fileID: 11400000, guid: f3f6088af7c99e643a89a322641e692c, type: 2}

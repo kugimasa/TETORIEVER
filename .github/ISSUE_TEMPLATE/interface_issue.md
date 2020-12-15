@@ -1,8 +1,8 @@
 ---
 name: Interfaceの実装タスク
-about: 
-title: 'Ixxの実装'
-labels: 'interface'
+about: インターフェース
+title: Ixxの実装
+labels: interface
 assignees: ''
 
 ---

@@ -1,6 +1,6 @@
 ---
 name: Interfaceの実装タスク
-about: ``
+about: 
 title: 'Ixxの実装'
 labels: 'interface'
 assignees: ''

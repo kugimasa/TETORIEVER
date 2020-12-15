@@ -3,7 +3,7 @@ name: ビルドのための統合作業
 about: ビルド
 title: ビルドNo.XXX
 labels: build
-assignees: '@SilCil'
+assignees: ''
 
 ---
 

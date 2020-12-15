@@ -2,7 +2,7 @@
 name: 変数/イベントオブジェクトのタスク
 about: SilCilSystemを使う実装
 title: 'XXでOOする'
-labels: 'vairable'
+labels: 'variable'
 assignees: ''
 
 ---

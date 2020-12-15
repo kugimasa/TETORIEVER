@@ -1,8 +1,8 @@
 ---
-name: 実装タスク
-about: プレイヤー目線で簡潔に
-title: ''
-labels: ''
+name: 変数/イベントオブジェクトのタスク
+about: SilCilSystemを使う実装
+title: 'XXでOOする'
+labels: 'vairable'
 assignees: ''
 
 ---
